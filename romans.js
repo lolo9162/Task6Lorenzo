@@ -1,16 +1,16 @@
 // Constants for the literals
-const INVALID_ROMAN = 'Please enter a valid roman';
-const INVALID_INTEGER = 'Please enter a valid integer';
-const OUT_OF_RANGE = 'Out of range (1-3999)';
+const INVALID_ROMAN = "Please enter a valid roman";
+const INVALID_INTEGER = "Please enter a valid integer";
+const OUT_OF_RANGE = "Out of range (1-3999)";
 
 function init() { 
   
   // Load elements once to avoid repetition on every invocation
-  var modeCheckbox = document.querySelector("input[type=\'checkbox\']");
+  var modeCheckbox = document.querySelector("input[type=\"checkbox\"]");
   var header = document.querySelector("h1");
   var convertButton = document.querySelector(".convert-button");
   var outputArea = document.querySelector(".convert-output");
-  var inputArea = document.querySelector("input[type=\'text\']");
+  var inputArea = document.querySelector("input[type=\"text\"]");
 
 
   modeCheckbox.addEventListener("change", function(e) {
@@ -48,7 +48,7 @@ const convertRomanToInteger = function(roman) {
 
   var response = {
     value: 0, 
-    message: '',
+    message: "",
     result: false 
   };
 
@@ -108,7 +108,7 @@ const convertIntegerToRoman = function(num) {
 
   var response = {
     value: 0,
-    message: '', 
+    message: "", 
     result: false 
   };
 
@@ -140,7 +140,7 @@ const convertIntegerToRoman = function(num) {
   };
 
   var count = 1;
-  var str = '';
+  var str = "";
   while (num > 0) {
     var last = parseInt(num % 10);
     last *= count;
@@ -225,7 +225,7 @@ if (!String.prototype.repeat) {
   String.prototype.repeat = function(count) {
     "use strict";
     if (this == null) {
-      throw new TypeError('can\'t convert ' + this + ' to object');
+      throw new TypeError("can\'t convert " + this + " to object");
     }
     var str = '' + this;
     count = +count;
@@ -233,14 +233,14 @@ if (!String.prototype.repeat) {
       count = 0;
     }
     if (count < 0) {
-      throw new RangeError('repeat count must be non-negative');
+      throw new RangeError("repeat count must be non-negative");
     }
     if (count == Infinity) {
-      throw new RangeError('repeat count must be less than infinity');
+      throw new RangeError("repeat count must be less than infinity");
     }
     count = Math.floor(count);
     if (str.length == 0 || count == 0) {
-      return '';
+      return "";
     }
     // Ensuring count is a 31-bit integer allows us to heavily optimize the
     // main part. But anyway, most current (August 2014) browsers can't handle
@@ -248,7 +248,7 @@ if (!String.prototype.repeat) {
     if (str.length * count >= 1 << 28) {
       throw new RangeError("repeat count must not overflow maximum string size");
     }
-    var rpt = '';
+    var rpt = "";
     for (;;) {
       if ((count & 1) == 1) {
         rpt += str;
