@@ -13,12 +13,12 @@ function init() {
   var inputArea = document.querySelector("input[type=\'text\']");
 
 
-  modeCheckbox.addEventListener('change', function(e) {
+  modeCheckbox.addEventListener("change", function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
   });
 
   const getModeTitle = function(integerToRoman) {
-    return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
+    return integerToRoman ? "Integer To Roman" : "Roman To Integer";
   };
 
   // Now, the convertion operation does only perform the operation. 
@@ -27,7 +27,7 @@ function init() {
   // 2 - Write the UI output (outputArea.innerHTML)
   // 3 - Show error messages
   // This is cleaner and also removes code duplications
-  convertButton.addEventListener('click', function() {
+  convertButton.addEventListener("click", function() {
     var inputValue = inputArea.value;
     var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
     if (convertion.result) {
@@ -67,7 +67,7 @@ const convertRomanToInteger = function(roman) {
     return response;
   }
 
-  var arr = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+  var arr = ["I", "V", "X", "L", "C", "D", "M"];
 
   var values = {
     I: 1,
@@ -130,13 +130,13 @@ const convertIntegerToRoman = function(num) {
   }
 
   const mapping = {
-    1: 'I',
-    5: 'V',
-    10: 'X',
-    50: 'L',
-    100: 'C',
-    500: 'D',
-    1000: 'M',
+    1: "I",
+    5: "V",
+    10: "X",
+    50: "L",
+    100: "C",
+    500: "D",
+    1000: "M",
   };
 
   var count = 1;
@@ -223,7 +223,7 @@ const greaterThan9 = function(num, obj) {
 
 if (!String.prototype.repeat) {
   String.prototype.repeat = function(count) {
-    'use strict';
+    "use strict";
     if (this == null) {
       throw new TypeError('can\'t convert ' + this + ' to object');
     }
@@ -246,7 +246,7 @@ if (!String.prototype.repeat) {
     // main part. But anyway, most current (August 2014) browsers can't handle
     // strings 1 << 28 chars or longer, so:
     if (str.length * count >= 1 << 28) {
-      throw new RangeError('repeat count must not overflow maximum string size');
+      throw new RangeError("repeat count must not overflow maximum string size");
     }
     var rpt = '';
     for (;;) {
